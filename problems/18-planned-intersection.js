@@ -17,8 +17,12 @@ console.log(fame(["a", "f", "z", "b"])); // returns [ 'f', 'a' ]
 
 function plannedIntersect(firstArr) {
   // Your code here
+  return (secondArr) => {
+    return firstArr.filter(el => secondArr.includes(el));
+  }
 }
-
+let abc = plannedIntersect(["a", "b", "c"]); // returns a function
+console.log(abc(["b", "d", "c"])); // returns [ 'b', 'c' ]
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 try {
   module.exports = plannedIntersect;
