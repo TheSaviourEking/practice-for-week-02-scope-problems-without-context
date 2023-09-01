@@ -20,9 +20,15 @@ funcTimer(5000, partyFunc); // in 5 seconds prints: "Party time!"
 
 function funcTimer(time, func) {
   // Your code here
+  return setTimeout(func, time);
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
+function partyFunc () {
+  console.log("Party time!")
+}
+
+funcTimer(5000, partyFunc); // in 5 seconds prints: "Party time!"
 
 try {
   module.exports = funcTimer;
