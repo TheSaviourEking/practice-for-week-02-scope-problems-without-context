@@ -43,8 +43,32 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 ***********************************************************************/
 
 function curriedSum(numArgs) {
-  // Your code here
+  // your code here
+  let numbers = [];
+  
+  function _curriedSum(number) {
+    numbers.push(number);
+    
+    if (numbers.length === numArgs) {
+      let sum = 0; // Initialize sum to 0
+      numbers.forEach(el => sum += el);
+      return sum;
+    } else {
+      return _curriedSum;
+    }
+  }
+  
+  return _curriedSum;
 }
+
+// const sum = curriedSum(4);
+// console.log(sum(5)(30)(20)(1)); // Outputs: 56
+
+const sum = curriedSum(4); // returns a function
+sum(5) // returns a function
+sum(20) // returns a function
+sum(30) // returns a function
+console.log(sum(20)); // => returns 75
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = curriedSum;
