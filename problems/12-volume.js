@@ -25,7 +25,27 @@ console.log(table2(75)); // STILL prints 6
 ***********************************************************************/
 function recVolume(height) {
   // Your code here
+  let length = null;
+  let width = null;
+
+  return (dimension) => {
+    if (length === null) {
+      length = dimension;
+    } else if (width === null) {
+      width = dimension;
+    }
+
+    if (width != null && length != null) {
+      return height * width * length;
+    }
+
+    return null // needs more args
+  }
 }
+let table1 = recVolume(5); // returns a function
+table1(4); // returns a function
+console.log(table1(3)); // prints 60
+console.log(table1(145)); // STILL prints 60
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
