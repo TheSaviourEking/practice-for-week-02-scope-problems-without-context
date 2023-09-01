@@ -27,9 +27,36 @@ Example 4:
   console.log(threeDays()); // prints "Happy New Year!"
 
 ***********************************************************************/
+// let result = countDownTimer(3)();
 function countDownTimer(num) {
-  // Your code here
+  // console.log(num, 'numOut');
+  if (num <= 0) {
+    num = 0;
+    return "Happy New Year!";
+  }
+  return () => {
+    num--;
+    if (num <= 0) {
+      return "Happy New Year!";
+    } else {
+      return countDownTimer(num);
+    }
+  }
 }
+// console.log(countDownTimer(0)); // prints "Happy New Year!"
+
+// let oneDay = countDownTimer(1); // returns a function
+// console.log(oneDay()); // prints "Happy New Year!"
+// console.log(oneDay()); // prints "Happy New Year!"
+
+// let twoDays = countDownTimer(2); // returns a function
+// console.log(twoDays()); // returns a function
+// console.log(twoDays()); // prints "Happy New Year!"
+
+// let threeDays = countDownTimer(3); // returns a function
+// console.log(threeDays()); // returns a function
+// console.log(threeDays()); // returns a function
+// console.log(threeDays()); // prints "Happy New Year!"
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
