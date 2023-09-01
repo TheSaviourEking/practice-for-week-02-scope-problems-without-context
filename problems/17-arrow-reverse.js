@@ -13,7 +13,12 @@ let result3 = reverseStr("potato"); // returns "otatop"
 ***********************************************************************/
 
 // Your code here
-
+let reverseStr = (str) => {
+  str = str.split('');
+  return str.reverse().join('');
+}
+let result1 = reverseStr("hello"); // returns "olleh"
+console.log(result1)
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
     module.exports = reverseStr;
